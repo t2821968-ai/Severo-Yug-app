@@ -1,0 +1,10 @@
+data/users.json
+data/market.json
+data/*.tmp
+.env
+.env.*
+!.env.example
+node_modules/
+android/.gradle/
+android/**/build/
+android/local.properties

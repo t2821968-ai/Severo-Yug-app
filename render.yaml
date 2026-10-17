@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: severo-yug
+    runtime: node
+    plan: starter
+    region: frankfurt
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: DATA_DIR
+        value: /opt/render/project/src/data
+      - key: SESSION_SECRET
+        generateValue: true
+    disk:
+      name: severo-yug-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
